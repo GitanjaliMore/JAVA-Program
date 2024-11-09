@@ -1,9 +1,9 @@
-package com;
-
+package conn;
 
 import java.util.Scanner;
 
-class Students{
+
+class Student{
 	 //instance variable
 	  String name;
 	  int age;
@@ -42,13 +42,7 @@ class Students{
 	public String toString() {
 		return "Student [name=" + name + ", age=" + age + ", fees=" + fees + ", gen=" + gen + ", marks=" + marks + "]";
 	}
-
-
-	
-	  
-
-
-	}
+}
 
 
 
@@ -59,23 +53,29 @@ public class MainAppStudent {
 	public static void main(String[] args) {
 		System.out.println("Main method");
 		
-		Students students = new Students();
-		Students student1 = new Students();
-		System.out.println(students);
-		System.out.println(student1);
-		System.out.println(students.name);
-		System.out.println(students.age);
-		System.out.println(students.fees);
+		//int a[]=new int[5];
 		
-		students.inputData();
-		students.displayData();
-		student1.inputData();
-		student1.displayData();
+		Student student[] = new Student[2]; //declaration of array
 		
-
-
-	}
-
-
+		for(int i=0;i<student.length;i++) {
+			student[i]=new Student();
+			student[i].inputData();
+		}
+		
+		//display all student data
+		for(int i=0;i<student.length;i++) {
+		    student[i].displayData();
+		}
+		
+		
+		
+		
+		
+//		student.inputData();
+//		student.displayData();
+//		student1.inputData();
+//		student1.displayData();
+		
+   }
 }
 

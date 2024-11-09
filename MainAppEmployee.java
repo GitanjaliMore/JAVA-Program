@@ -1,82 +1,41 @@
-package com;
+package conn;
 
-
-import java.util.Scanner;
-
+//constructor or with argument
 
 class Employee{
-	 //instance variable
-	  String name;
-	  int age;
-	  float salary;
-	  String Emailid;
-	  String phone;
-
-
-	   void inputData(){ //member methods
-	       @SuppressWarnings("resource")
-		Scanner scanner = new Scanner(System.in);
-	       System.out.println("Enter name");
-	       name = scanner.next();
-	       System.out.println("Enter age ");
-	       age = scanner.nextInt();
-	       System.out.println("Enter salary");
-	       salary = scanner.nextInt();
-	       System.out.println("Enter Emailid");
-	       Emailid = scanner.next();
-	       System.out.println("Enter phone");
-	       phone = scanner.next();
-	         
-	   }
-
-
-	  void displayData(){
-	      System.out.println("Name = "+name);
-	      System.out.println("Age = "+age);
-	      System.out.println("salary = "+salary);
-	      System.out.println("Emailid = "+Emailid);
-	      System.out.println( "phone= "+phone);
-	  }
-
-
-	@Override
-	public String toString() {
-		return "Employee [name=" + name + ", age=" + age + ", salary=" + salary + ", Emailid=" + Emailid + ", phone="
-				+ phone + "]";
+	String name;
+	//constructor : is special type of method
+	 //name is same as class , always make construcor public
+	//constructor is called implicitly on creation of an object
+	//constructor is used to initialize instance variable of a class
+//	public Employee() {  //constructor no argument
+//		System.out.println("constructor is called");
+//		name="Sweta";
+//	}
+	
+	public Employee(String name) {
+		this.name = name;
+		System.out.println(this);
 	}
-
-
+	
+	void displayEmployee() {
+		System.out.println("name= "+this.name);
 	}
-
+}
 
 
 public class MainAppEmployee {
 
 
 	public static void main(String[] args) {
-		//System.out.println("Main method");
 		
-		Employee employee = new Employee();
-		Employee employee1 = new Employee();
-		System.out.println(employee);
-		System.out.println(employee1);
-		System.out.println(employee.name);
-		System.out.println(employee.age);
-		System.out.println(employee.salary);
-		//System.out.println(employee.Emailid);
-		//System.out.println(employee.phone);
-		
-		employee.inputData();
-		employee.displayData();
-		employee1.inputData();
-		employee1.displayData();
-		
-
-
+       Employee employee = new Employee("Baranipriya");
+       Employee employee1 = new Employee("Sanskriti");
+       System.out.println(employee);
+       System.out.println(employee1);
+       employee.displayEmployee();
+       employee1.displayEmployee();
 	}
 
 
 }
-
-
-
