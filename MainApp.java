@@ -1,32 +1,36 @@
-package conn;
-
-
-//inheritance
- class A{
-   public A(){
-      System.out.println("Class A");
-   }
+package java8feature;
+@FunctionalInterface
+interface MyInterface {
+    void add();
 }
 
-class B extends A{
-public B(){
-      System.out.println("Class B");
-   }
-
+class MyClass implements MyInterface {
+    @Override
+    public void add() {
+        System.out.println("Add method from MyClass");
+    }
 }
 
-class C extends B{
-public C(){
-      System.out.println("Class C");
-   }
+public class MainApp {
+    public static void main(String args[]) {
+        // Creating an instance of MyClass
+        MyClass obj = new MyClass();
+        obj.add();
+
+        // Anonymous class implementation
+        MyInterface obj1 = new MyInterface() {
+            @Override
+            public void add() {
+                System.out.println("Add method from Anonymous Class");
+            }
+        };
+        obj1.add();
+
+        // Using Lambda Expression
+        MyInterface obj2 = () -> {
+            System.out.println("Add method from Lambda Expression");
+        };
+        obj2.add();
+    }
 }
-//class D extends B,C{  //java does not supports multiple inheritance
-//}
-public class MainApp{
-   
-	
-	@SuppressWarnings("unused")
-	public static void main(String args[]){
-        B b = new B();
-   }
-}
+
