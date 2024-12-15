@@ -1,36 +1,30 @@
-package java8feature;
-@FunctionalInterface
-interface MyInterface {
-    void add();
-}
+package mulbigno;
 
-class MyClass implements MyInterface {
-    @Override
-    public void add() {
-        System.out.println("Add method from MyClass");
-    }
-}
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.math.BigInteger;
 
 public class MainApp {
-    public static void main(String args[]) {
-        // Creating an instance of MyClass
-        MyClass obj = new MyClass();
-        obj.add();
+	
+	 public static String multipyNumbers(String A, String B) {
+		BigInteger n1=new BigInteger(A);
+		BigInteger n2=new BigInteger(B);
+			
+		return n1.multiply(n2).toString(); 
+			 
+		 }
 
-        // Anonymous class implementation
-        MyInterface obj1 = new MyInterface() {
-            @Override
-            public void add() {
-                System.out.println("Add method from Anonymous Class");
-            }
-        };
-        obj1.add();
 
-        // Using Lambda Expression
-        MyInterface obj2 = () -> {
-            System.out.println("Add method from Lambda Expression");
-        };
-        obj2.add();
-    }
-}
+		public static void main(String[] args) throws IOException {
+			String A,B;
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+			A = br.readLine(); //876979647567
+			B= br.readLine(); //98575967947945
+			
+			System.out.println(MainApp.multipyNumbers(A,B));
+			
+		}
 
+
+	}
